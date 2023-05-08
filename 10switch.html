@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch</title>
+</head>
+
+<body>
+    <script>
+        // Switch
+        function mark0(check) {
+            switch (check) {
+                case "a":
+                    ans = "alpha";
+                    break;
+                case "b":
+                    ans="beta";
+                    break;
+                case "c":
+                    ans="gamma";
+                    break;
+                case "d":
+                    ans="delta";
+                    break;
+                default:
+                    ans="extra";
+            }
+            return ans;
+        }
+        console.log(mark0("c"));
+
+        // Sequence
+        function mark1(check) {
+            switch (check) {
+                case 1:
+                case 2:
+                case 3:
+                    ans="Low";
+                    break;
+                case 4:
+                case 5:
+                case 6:
+                    ans="Mid";
+                    break;
+                case 7:
+                case 8:
+                case 9:
+                    ans="High";
+                    break;
+            }
+            return ans;
+        }
+        console.log(mark1(8));
+    </script>
+</body>
+
+</html>

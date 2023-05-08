@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+
+<body>
+    <script>
+        // Array
+        var myArray0 = ["Tirth", 12, "Ice Cream", 20];
+        console.log(myArray0);
+
+        // Nested Array
+        var myArray1=[["Water",10,55,"Rain","Dust"],["Bottle",15]];
+        console.log(myArray1);
+
+        // Index No.
+        var myArray2=["Snow",18,50,90];
+        var myData=myArray2[0];
+        console.log(myData);
+
+        // Modify Array
+        var myArray3=["Ice",90,100];
+        myArray3[0]=80;
+        console.log(myArray3);
+
+        // Multi-dim Array
+        var myArray4=[[1,2,3],[4,5,6],[7,8,9],[[10,1,2],11,12]];
+        console.log(myArray4[3][0][0]);
+
+        // push (adds an element at the end of the array)
+        var myArray5=[["Cat",5],["Fish",2]];
+        myArray5.push(["Dog",16]);
+        console.log(myArray5);
+
+        // pop (removes an element at the end of the array)
+        var myArray6=[1,2,3];
+        console.log(myArray6.pop());
+
+        // shift (removes an element at the start of the array)
+        var myArray7=["John","James","Jack"];
+        console.log(myArray7.shift());
+
+        // unshift (adds an element at the start of the array)
+        var myArray8=[22,23,24];
+        myArray8.unshift(21);
+        console.log(myArray8);
+        
+    </script>
+</body>
+
+</html>

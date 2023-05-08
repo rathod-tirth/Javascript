@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logical_OPs</title>
+</head>
+
+<body>
+    <script>
+        /** Logical_OPs **/
+
+        // &&
+        function log0(check) {
+            if (check<10 && check>5) {
+                return "between 10 to 5";
+            }
+            return "out of scope";
+        }
+        console.log(log0(15));
+
+        // ||
+        function log1(check) {
+            if (check>20 || check<10){
+                return "outside";
+            }
+            return "inside";
+        }
+        console.log(log1(26));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparison OPs and If</title>
+</head>
+
+<body>
+    <script>
+        // boolean
+        function obb() {
+            return false;
+        }
+        console.log(obb());
+
+        // if
+        function trueorfalse(check) {
+            if (check) {
+                return "True";
+            }
+            return "False";
+        }
+        console.log(trueorfalse(false));
+
+        /** Comparison Ops **/
+
+        // Equal Op (==)
+        function comp0(check) {
+            if (check == 10) {
+                return "Equal";
+            }
+            return "Not Equal";
+        }
+        console.log(comp0("10"));
+
+
+        // Strict Equal Op (===)
+        function comp1(check) {
+            if (check === 8) {
+                return "Equal";
+            }
+            return "Not Equal";
+        }
+        console.log(comp1("8"));
+
+        // "10"  ===  10 / False
+        // '10'  ===  10 / False
+
+        // ex
+        function comp2(a, b) {
+            if (a == b.length) {
+                return "Equal Length";
+            }
+            return "Not Equal Length";
+        }
+        console.log(comp2(5, "solid"))
+
+        // Not Equal (!=)
+        function comp3(check) {
+            if (check!=70){
+                return "Not Equal";
+            }
+            return "Equal";
+        }
+        console.log(comp3("70"));
+
+        // Strict Equal (!==)
+        function comp4(check) {
+            if (check!==80){
+                return "Not Equal";
+            }
+            return "Equal";
+        }
+        console.log(comp4("80"));
+
+        // Greater than (>)
+        // Greater than and equal to(>=)
+        // Lesser than (<)
+        // Lesser than (<=)
+    </script>
+</body>
+
+</html>

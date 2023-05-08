@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="eng">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops</title>
+</head>
+
+<body>
+    <script>
+        var myArray = [];
+        var i = 0;
+
+        // while loop
+        while (i < 5) {
+            myArray.push(i);
+            i++;
+        }
+        console.log(myArray);
+
+        // for loop
+        var myArray2 = [];
+        for (var j = 0; j < 5; j++) {
+            myArray2.push(j);
+        }
+        console.log(myArray2);
+
+        // even numbers
+        var myArray3 = [];
+        for (var i = 0; i < 10; i += 2) {
+            myArray3.push(i);
+        }
+        console.log(myArray3);
+
+        // odd numbers
+        var myArray4 = [];
+        for (var i = 1; i < 10; i += 2) {
+            myArray4.push(i);
+        }
+        console.log(myArray4);
+
+        // array loop
+        var myArray5 = [2, 3, 4, 5, 6];
+        var mytotal = 0;
+
+        for (var i = 0; i < myArray5.length; i++) {
+            // mytotal.push(myArray5[i]);
+            mytotal += myArray5[i];
+        }
+        console.log(mytotal);
+
+        // nested loops
+        function multi(arr) {
+            var pro = 1;
+            for (var i = 0; i < arr.length; i++) {
+                for (var j = 0; j < arr[i].length; j++) {
+                    pro *= arr[i][j];
+                }
+            }
+            return pro;
+        }
+        console.log(multi([[1, 2], [3, 4], [5, 6, 7]]));
+
+        // do while
+        var i=10;
+        var arr=[];
+        do {
+            arr.push(i);
+            i++;
+        } while(i<5);
+        console.log(i,arr);
+    </script>
+</body>
+
+</html>

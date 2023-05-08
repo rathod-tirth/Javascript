@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If-else</title>
+</head>
+
+<body>
+    <script>
+        // if_else
+        function mark0(check) {
+            if (check >= 50) {
+                return "50 or greater than 50";
+            } else {
+                return "Smaller than 50";
+            }
+        }
+        console.log(mark0(10));
+
+        // else_if
+        function mark1(check) {
+            if (check > 20) {
+                return "Greater than 20";
+            } else if (check > 10) {
+                return "Greater than 10";
+            } else {
+                return "Smaller than 10";
+            }
+        }
+        console.log(mark1(16));
+
+        // Golf Game
+        let name = ["Hole in one!", "Eagle", "Birdie", "Par", "Bogey", "Double Bogey", "Go Home!"];
+        function golf(par, stroke) {
+            if (stroke == 1) {
+                return name[0];
+            } else if (stroke <= par - 2) {
+                return name[1];
+            } else if (stroke == par - 1) {
+                return name[2];
+            } else if (stroke == par) {
+                return name[3];
+            } else if (stroke == par + 1) {
+                return name[4];
+            } else if (stroke == par + 2) {
+                return name[5];
+            } else {
+                return name[6];
+            }
+        }
+        console.log(golf(5, 2));
+    </script>
+</body>
+
+</html>

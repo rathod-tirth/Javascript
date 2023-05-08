@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Numbers</title>
+</head>
+
+<body>
+    <script>
+        // decimal number (0 <= n < 1)
+        function dom() {
+            return Math.random();
+        }
+        console.log(dom());
+
+        // whole number
+        function whole() {
+            return Math.floor(Math.random() * 20);
+        }
+        console.log(whole());
+
+        // min max
+        function range(myMax,myMin) {
+            return Math.floor(Math.random() * (myMax - myMin + 1)) + myMin; // bharee Maths
+        }
+            /* 
+                To generate a random number within a specified range, we subtract 
+                the minimum value from the maximum value. This gives us the range 
+                in which the random number should exist. Since the random() 
+                function cannot reach exactly 1, the maximum number in the range 
+                is also unreachable. To overcome this, we add 1 to the range so 
+                that the random number can be generated within the entire 
+                desired range. However, the generated number always starts from 
+                0, so we just need to add the minimum value to the generated 
+                number to obtain the final random number.
+            */
+        console.log(range(10,5));
+    </script>
+</body>
+
+</html>

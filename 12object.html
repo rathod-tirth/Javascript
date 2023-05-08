@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object</title>
+</head>
+
+<body>
+    <script>
+        // To declare an object ("key":"value")
+
+        /** Accessing Objects **/
+        var myObj = {
+            name: "Lucy",
+            legs: 4,
+            friends: ["Tom", "Jake", "Roxy", "Lala"],
+            "fav toy": "pesky",
+            12: "Twelve",
+            extra: "for nothing",
+            gift: "Piano"
+        };
+
+        // 1. dot(.) notation
+        console.log(myObj.name);
+        console.log(myObj.friends[0]);
+
+        // 2. bracket([]) notation
+        // when a property has a space(" "), you must use bracket notation
+        console.log(myObj["fav toy"]);
+        console.log(myObj["friends"][3]);
+
+        // 3. variable
+        var num = 12;
+        console.log(myObj[num]);
+
+        // Updating value of an object
+        myObj.name = "Lisa";
+        console.log(myObj.name);
+
+        // Adding properties to an object
+        myObj.location = "home";
+        myObj["fav place"] = "park";
+
+        console.log(myObj.location);
+        console.log(myObj["fav place"]);
+
+        // Deleting properties from an object
+        delete myObj.extra;
+        console.log(myObj.extra);
+
+        // lookups
+        function lookups(val) {
+            let result;
+            var data = {
+                alpha: "Alex",
+                bravo: "Brian",
+                charlie: "Charles",
+                delta: "David",
+                echo: "Easy",
+                fox: "fox"
+            }
+            result = data[val];
+
+            return result;
+        }
+        console.log(lookups("delta"));
+
+        // check properties
+        function check(pro) {
+            if (myObj.hasOwnProperty(pro)) {
+                return myObj[pro];
+            } else {
+                return "Not Found";
+            }
+        }
+        console.log(check("gift"));
+        console.log(check("gg"));
+
+        // nested objects
+        var nest = [
+            {
+                name:"Jake",
+                age:21,
+                work:"Postal Service",
+                hobby:["Music","Dance"]
+            },
+            {
+                name:"Sally",
+                age:16,
+                work:"Subway",
+                hobby:["Cars","Gaming","Fishing"]
+            },
+            {
+                name:"Danny",
+                age:19,
+                work:"Scuba Diver",
+                hobby:["Para-Gliding","Surfing","Making Sand castle"]
+            }
+        ]
+        console.log(nest[1].name+" works at "+nest[1].work);
+        console.log(nest[1].name+" loves "+nest[1].hobby[0],nest[1].hobby[1],nest[1].hobby[2]);
+    </script>
+</body>
+
+</html>

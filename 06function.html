@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function</title>
+</head>
+
+<body>
+    <script>
+        
+        function code() {
+            console.log("Hello World");
+        }
+        code();
+
+        // Parameters
+        function para(a,b) {
+            console.log(a+b);
+            console.log(a*b);
+        }
+        para("Snow","Fall");
+        para(15,18);
+
+        /** Scope **/
+
+        // Global variable
+        var myGlobal=15;
+        function scope1() {
+            alsoGlobal=20;  // This defines the variable as Global
+            console.log("myGlobal: "+myGlobal);
+        }
+        scope1();
+        console.log("alsoGlobla: "+alsoGlobal);
+
+        // Local variable
+        function scope2() {
+            var myLocal=10;
+            console.log("myLocal: "+myLocal);
+        }
+        scope2();
+
+        // Return
+        function ret(a) {
+            return a*5;
+        }
+        console.log(ret(10));
+
+        // Queue
+        var myArray=[1,2,3,4,5];
+        
+        function line(arr, num) {
+            arr.push(num);
+            return arr.shift()
+        }
+        console.log("Before: "+JSON.stringify(myArray));
+        console.log(line(myArray,6));
+        console.log("Afer: "+JSON.stringify(myArray));
+
+    </script>
+</body>
+
+</html>
