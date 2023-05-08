@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mutate const</title>
+</head>
+
+<body>
+    <script>
+        // const is read-only but we can mutate
+        const S = [5, 7, 2];
+        function mut() {
+            "use strict"; // to notify to always declare a variable
+
+            S[0] = 2;
+            S[1] = 7;
+            S[2] = 5;
+        }
+        mut();
+        console.log(S);
+
+        // prevent mutation
+        function change() {
+            const MATH = {
+                PI: 3.14
+            };
+            object.freeze(MATH);
+            try {
+                MATH.PI = 99
+            } catch (ex) {
+                console.log(ex);
+            }
+            return MATH.PI;
+        }
+        console.log(change());
+
+    </script>
+</body>
+
+</html>
