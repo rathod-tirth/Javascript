@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extra</title>
+</head>
+
+<body>
+    <script>
+        // default parameter
+        const add = (num, val = 1) => num + val;
+        console.log(add(15, 3));
+        console.log(add(15));
+
+        // rest operators
+        const sum= (...arr) => {
+            return arr.reduce((a,b)=>a+b,0);
+        }
+        console.log(sum(1,5,3,6));
+    </script>
+</body>
+
+</html>
