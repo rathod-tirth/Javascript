@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring Function</title>
+</head>
+
+<body>
+    <!-- Its destructurs the value of an key into pieces so its easy to access -->
+    <script>
+        // destructuring assignments
+        const temp = {
+            yesterday: "45.5",
+            today: "43",
+            tomorrow: "41"
+        }
+        const { yesterday, today: current, tomorrow: tomrow } = temp;
+        console.log(yesterday);
+        console.log(current);
+
+        // nested array
+        const temp2 = {
+            yesterday: { low: "32.3", high: "40.1" },
+            today: { low: "30.6", high: "41.2" },
+            tomorrow: { low: "31.7", high: "42" },
+        }
+        const { today: { high: highToday, low: lowToday } } = temp2;
+        console.log("Highest: " + highToday, "Lowest: " + lowToday);
+
+        // assigning array elements to variables
+        const [x, , , y, , z] = [1, 2, 3, 4, 5, 6];
+        console.log(x, y, z);
+
+        // swapping
+        let a = 10, b = 5;
+        (() => {
+            [a, b] = [b, a];
+        })();
+        console.log(a, b);
+
+        // rest op
+        const arr3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        function remove(list) {
+            const [, , ...arr] = list;
+            return arr;
+        };
+        console.log(remove(arr3));
+        console.log(arr3);
+
+        // as function parameters
+        const stats = {
+            max: 56.78,
+            standard_deviation: 4.34,
+            median: 34.54,
+            mode: 23.87,
+            min: -0.75,
+            average: 35.85
+        };
+
+        const half = ({ max, min }) => {
+            return (max + min) / 2;
+        };
+        console.log(half(stats));
+        console.log(stats);
+    </script>
+</body>
+
+</html>

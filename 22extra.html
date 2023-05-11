@@ -26,19 +26,10 @@
         const arr1 = ["JAN", "FEB", "MAR", "APR", "JUN", "JUL", "SEP", "NOV", "DEC"];
         let arr2;
         (function () {
-            arr2 = [...arr1];
+            // arr2 = [...arr1];
+            arr2 = arr1;
         })();
         console.log(arr2);
-
-        // destructuring assignments
-        const temp = {
-            yesterday: "45.5",
-            today: "43",
-            tomorrow: "41"
-        }
-        const { yesterday, today:current, tomorrow:tomrow } = temp;
-        console.log(yesterday);
-        console.log(current);
     </script>
 </body>
 
