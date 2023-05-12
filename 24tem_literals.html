@@ -1,12 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Template Literals</title>
 </head>
+
 <body>
-    <script></script>
+    <script>
+        // template literals
+        const person = {
+            name: "Tirth Rathod",
+            age: 18
+        };
+
+        const greet = `Hello, my name is ${person.name}! 
+I am ${person.age} years old.`;
+        console.log(greet);
+
+        // ex
+        const result = {
+            success: ["max-length", "no-amd", "prefer-arrow-functions"],
+            failure: ["no-var", "var-on-top", "linebreak"],
+            skipped: ["no-extra-semi", "no-dup-keys"]
+        };
+
+        function lit(arr) {
+            const fail=[];
+            for(let i=0; i<3; i++) {
+                fail.push(`<li class="text-warning">${arr[i]}</li>`);
+            }
+            return fail;
+        }
+        console.log(lit(result));
+
+        // simple fields
+        const per = (name,age,gender) => ({name,age,gender});
+        console.log(per("Tirth Rathod",18,"Male"));
+    </script>
 </body>
+
 </html>
