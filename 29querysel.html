@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query Selector</title>
+</head>
+
+<body>
+    <p id="one">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi quas, quos magni animi aliquid placeat
+        rerum iure, dignissimos sed, porro possimus quae recusandae maiores molestias iste! At ducimus vero corrupti.
+    </p>
+    <p class="two"></p>
+    <span></span>
+    <ul>
+        <li>Apple</li>
+        <li>Cake</li>
+        <li>Banana</li>
+        <li>Cherry</li>
+    </ul>
+    <script>
+        // querySelector
+        document.querySelector("#one").textContent="Hello! My Name is Tirth Rathod.";
+        document.querySelector(".two").textContent="I am passionate about coding.";
+        document.querySelector("span").textContent=eval("1+1");
+        document.querySelector("li:nth-child(2)").textContent=("Mango");
+    </script>
+</body>
+</html>
