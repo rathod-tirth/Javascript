@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listener</title>
+</head>
+
+<body>
+    <button id="eve1">Click</button>
+    <button id="eve2">Double Click</button><br><br>
+
+    <button id="eve3">Mouse Down</button>
+    <button id="eve4">Mouse Enter</button>
+    <button id="eve5">Mouse Leave</button>
+    <button id="eve6">Mouse Move</button><br><br>
+
+    <input type="text" id="eve10" placeholder="Key Down">
+    <input type="text" id="eve12" placeholder="Key Up">
+    <script>
+        // click
+        document.getElementById("eve1").addEventListener("click", () => {
+            console.log("Single Click");
+        })
+
+        // double click
+        document.getElementById("eve2").addEventListener("dblclick", () => {
+            console.log("Double Click");
+        })
+
+        // mouse down
+        document.getElementById("eve3").addEventListener("mousedown", () => {
+            console.log("Mouse Down");
+        })
+
+        // mouse enter
+        document.getElementById("eve4").addEventListener("mouseenter", () => {
+            console.log("Mouse Enter");
+        })
+
+        // mouse leave
+        document.getElementById("eve5").addEventListener("mouseleave", () => {
+            console.log("Mouse Leave");
+        })
+
+        // mouse move
+        document.getElementById("eve6").addEventListener("mousemove", () => {
+            console.log("Mouse Move");
+        })
+
+        // key down
+        document.getElementById("eve10").addEventListener("keydown", () => {
+            console.log("Key Down");
+        })
+        
+        // key up
+        document.getElementById("eve12").addEventListener("keyup", () => {
+            console.log("Key Up");
+        })
+    </script>
+</body>
+
+</html>
