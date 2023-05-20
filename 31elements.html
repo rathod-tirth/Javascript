@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elements</title>
+</head>
+<body>
+    <ul>
+        <h4>Fruits</h4>
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Mango</li>
+    </ul>
+    <script>
+        let fruit=["Grape","Pineapple","Orange"];
+        let fruit2=["Melon","Cherry","Pear","Peches"];
+        
+        for(let i=0; i<=fruit.length-1; i++) {
+            // adding elements using innerHTML
+            document.querySelector("ul").innerHTML+=`<li>`+`<i>`+fruit[i]+`</i>`+`</li>`;
+
+            // adding elements using createElements() and append()
+            let li=document.createElement("li");
+            li.textContent=fruit2[i];
+            document.querySelector("ul").append(li);
+        }
+    </script>
+</body>
+</html>
