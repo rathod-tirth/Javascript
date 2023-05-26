@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save Text</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-width: 250px;
+        }
+
+        #txt {
+            margin: 10px;
+            padding: 5px 3px;
+            font-family: sans-serif;
+            outline-color: gray;
+        }
+
+        .btn {
+            margin: 0 0 10px 10px;
+            padding: 2px 28px;
+            font-size: 18px;
+            color: white;
+            font-weight: bold;
+            background-color: gray;
+            border: 1px solid black;
+        }
+
+        #list {
+            font-family: sans-serif;
+            margin-left: 40px;
+            list-style-type: "➤  ";
+            color: rgb(87, 87, 87);
+        }
+        #list li a{
+            color: rgb(87, 87, 87);
+            text-decoration: none;
+        }
+        #list li a:hover{
+            color: gray;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="txt"><br>
+    <button class="btn" id="btn">Save</button>
+    <button class="btn" id="cls">Clear</button>
+    <ul id="list">
+    </ul>
+    <script>
+        const txt = document.getElementById("txt");
+        const btn = document.getElementById("btn");
+        const list = document.getElementById("list");
+        const cls = document.getElementById("cls");
+        const local = JSON.parse(localStorage.getItem("text"));
+        let val=[];
+
+        if(local) {
+            val = local;
+            render(val);
+        }
+
+        btn.onclick = function () {
+            txt.value ? val.push(txt.value) && render(val) : null;
+            txt.value = "";
+            localStorage.setItem("text", JSON.stringify(val));
+        }
+
+        function render(arr) {
+            let myItem = "";
+            for (let i = 0; i < arr.length; i++) {
+                myItem += `
+                <li>
+                    <a href="https://${arr[i]}" target="_blank">${arr[i]}</a>
+                </li>`;
+            }
+            list.innerHTML = myItem;
+        }
+
+        cls.onclick = function () {
+            list.innerHTML = "";
+            val=[];
+            localStorage.clear();
+        }
+    </script>
+</body>
+
+</html>
