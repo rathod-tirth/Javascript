@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <title>Event</title>
+</head>
+
+<body>
+    <p>This is a Paragraph.</p>
+    <i>This is a Italic</i>
+    <div>This is a Division.</div>
+    <input type="text">
+    <script>
+        // using function instead of document.ready
+        $(function () {
+            // click event
+            $("p").click(function () {
+                console.log("Paragraph is clicked");
+            });
+
+            // hover event is a combination of two events: enter and leave
+            $("input").hover(function () {
+                console.log("Enters Input tab");
+            }, 
+            function () {
+                console.log("Leaves Input tab");
+            });
+
+            // change event
+            $("input").change(function () {
+                console.log("Input tab is Changed");
+            });
+
+            /* on-event */
+
+            // you can add multiple events using on-event
+            $("i").on("click mouseenter",function () {
+                console.log("I is Clicked");
+            })
+
+            // you can add multiple events using key:value in on-event
+            $("div").on({
+                "click":function () {console.log("Div is clicked")},
+                "mouseleave":function () {console.log("Leaves Div")}
+            });
+
+            // removes the event
+            $("i").off("mouseenter");
+
+            // one events works same as on-events but only once
+            $("div").one("mouseover",function () {
+                console.log("Div is Hovered");
+            })
+        });
+
+        // m&k: dbclick, mouseeneter, mouseleave, mousedown, mouseup, mousemove, hover, etc.
+        // form: focus, blur, change, etc.
+    </script>
+</body>
+
+</html>
