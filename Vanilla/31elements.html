@@ -19,7 +19,7 @@
         
         for(let i=0; i<=fruit.length-1; i++) {
             // adding elements using innerHTML
-            document.querySelector("ul").innerHTML+=`<li>`+`<i>`+fruit[i]+`</i>`+`</li>`;
+            document.querySelector("ul").innerHTML+=`<li><i>${fruit[i]}</i></li>`;
 
             // adding elements using createElements() and append()
             let li=document.createElement("li");
