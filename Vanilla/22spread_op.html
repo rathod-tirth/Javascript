@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest and Spread Operators</title>
+</head>
+
+<body>
+    <script>
+        /* Spread Operators */
+
+        // add the elements of an existing array into a new array
+        let num5to10 = [5, 6, 7, 8, 9, 10];
+        let num = [1, 2, 3, 4, ...num5to10, 11, 12, 13, 14, 15];
+        console.log(num);
+
+        // passes elements of an array as arguments to a function
+        function addnum(a, b, c) {
+            console.log(a + b + c);
+        }
+        addnum(...num5to10);
+
+        // copy array
+        let arr = [1, 2, 3];
+        let arr2 = [...arr];
+        arr2.push(4);
+        console.log(arr);
+        console.log(arr2);
+
+        // concatenate array
+        arr = [0, 1, 2];
+        arr2 = [3, 4, 5];
+        arr = [...arr, ...arr2];
+        console.log(arr);
+
+        // rest op: condense multiple elements into an array
+        function multiply(num, ...arr) {
+            console.log(arr.map(x => x * num));
+        }
+        multiply(2, 5, 6, 4);
+    </script>
+</body>
+
+</html>
