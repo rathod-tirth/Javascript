@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For of loop</title>
+</head>
+
+<body>
+    <script>
+        let arr = [500, 960, 750];
+        let str = "Blueberry";
+        let total = 0;
+
+        let obj = { fname: "Tirth", lname: "Rathod", age: 18 };
+        let bio = "";
+
+        // for of (loops over iterable properties)
+        for (let amount of arr) {
+            total += amount;
+        }
+        console.log(total);
+
+        for (let word of str) {
+            console.log(word);
+        }
+
+        // since objects are not iterable it will return an error
+        try {
+            for (let name of obj) {
+                bio += name;
+            }
+        } catch (error) {
+            console.log(error);
+        }
+
+        // for in
+        total = 0;
+        for (let amo in arr) {
+            console.log(amo);
+            total += arr[amo];
+        }
+
+        console.log(total);
+
+        for (let x in obj) {
+            bio += obj[x];
+        }
+        console.log(bio);
+
+    </script>
+</body>
+
+</html>
