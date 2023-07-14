@@ -16,7 +16,7 @@
         let obj = { fname: "Tirth", lname: "Rathod", age: 18 };
         let bio = "";
 
-        // for of (loops over iterable properties)
+        // for of (loops over iterable properties)/(loops over values)
         for (let amount of arr) {
             total += amount;
         }
@@ -35,11 +35,11 @@
             console.log(error);
         }
 
-        // for in
+        // for in (loops over ennumerable properties)/(loops over key)
         total = 0;
         for (let amo in arr) {
-            console.log(amo);
             total += arr[amo];
+            console.log(amo);
         }
 
         console.log(total);
