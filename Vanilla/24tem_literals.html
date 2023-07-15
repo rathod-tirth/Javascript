@@ -9,6 +9,8 @@
 </head>
 
 <body>
+    Fruits
+    <ul></ul>
     <script>
         // template literals
         const person = {
@@ -21,24 +23,26 @@ I am ${person.age} years old.`;
         console.log(greet);
 
         // ex
-        const result = {
-            success: ["max-length", "no-amd", "prefer-arrow-functions"],
-            failure: ["no-var", "var-on-top", "linebreak"],
-            skipped: ["no-extra-semi", "no-dup-keys"]
-        };
+        const ul = document.querySelector("ul");
+        const fruits = ["apple", "strawberry", "mango", "orange", "cherry", "pineapple"];
 
-        function lit(arr) {
-            const fail=[];
-            for(let i=0; i<3; i++) {
-                fail.push(`<li class="text-warning">${arr[i]}</li>`);
+        function push(val) {
+            for (let i = 0; i < val.length; i++) {
+                ul.innerHTML += `<li>${val[i]}</li>`;
             }
-            return fail;
         }
-        console.log(lit(result));
+        push(fruits);
 
         // simple fields
-        const per = (name,age,gender) => ({name,age,gender});
-        console.log(per("Tirth Rathod",18,"Male"));
+        const per = (name, age, gender) => ({ name, age, gender });
+        console.log(per("Tirth Rathod", 18, "Male"));
+
+        // array to object
+        const arr = ["one", "two", "three", "four", "five"];
+
+        
+
+        console.log(obj(arr));
     </script>
 </body>
 
