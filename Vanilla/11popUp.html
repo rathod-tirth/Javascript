@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PopUp box</title>
+</head>
+
+<body>
+    <button id="alr">Alert</button>
+    <button id="con">Confirm</button>
+    <button id="pro">Prompt</button>
+    <script>
+        const alr = document.getElementById("alr");
+        const con = document.getElementById("con");
+        const pro = document.getElementById("pro");
+
+        alr.onclick = () => {
+            alert("hello");
+        }
+
+        con.onclick = () => {
+            if (confirm("Are you sure?")) {
+                document.write("You pressed OK!");
+            } else {
+                document.write("You pressed Cancel.");
+            }
+        }
+
+        pro.onclick = () => {
+            let name = prompt("Your Name", "John Wick");
+            if (name == null || name == "") {
+                document.write("Please Enter you name!");
+            } else{
+                document.write(`Greetings Mr.${name}. How was your day?`)
+            }
+        }
+    </script>
+</body>
+
+</html>

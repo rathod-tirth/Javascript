@@ -33,8 +33,8 @@
         console.log(myObj["friends"][3]);
 
         // 3. variable
-        var num = 12;
-        console.log(myObj[num]);
+        var num = 12, g = "gift";
+        console.log(myObj[num], myObj[g]);
 
         // Updating value of an object
         myObj.name = "Lisa";
@@ -53,7 +53,6 @@
 
         // lookups
         function lookups(val) {
-            let result;
             var data = {
                 alpha: "Alex",
                 bravo: "Brian",
@@ -62,9 +61,8 @@
                 echo: "Easy",
                 fox: "fox"
             }
-            result = data[val];
 
-            return result;
+            return data[val];
         }
         console.log(lookups("delta"));
 
@@ -82,26 +80,26 @@
         // nested objects
         var nest = [
             {
-                name:"Jake",
-                age:21,
-                work:"Postal Service",
-                hobby:["Music","Dance"]
+                name: "Jake",
+                age: 21,
+                work: "Postal Service",
+                hobby: ["Music", "Dance"]
             },
             {
-                name:"Sally",
-                age:16,
-                work:"Subway",
-                hobby:["Cars","Gaming","Fishing"]
+                name: "Sally",
+                age: 16,
+                work: "Subway",
+                hobby: ["Cars", "Gaming", "Fishing"]
             },
             {
-                name:"Danny",
-                age:19,
-                work:"Scuba Diver",
-                hobby:["Para-Gliding","Surfing","Making Sand castle"]
+                name: "Danny",
+                age: 19,
+                work: "Scuba Diver",
+                hobby: ["Para-Gliding", "Surfing", "Making Sand castle"]
             }
-        ]
-        console.log(nest[1].name+" works at "+nest[1].work);
-        console.log(nest[1].name+" loves "+nest[1].hobby[0],nest[1].hobby[1],nest[1].hobby[2]);
+        ];
+        console.log(nest[1].name + " works at " + nest[1].work);
+        console.log(nest[1].name + " loves " + nest[1].hobby[0], nest[1].hobby[1], nest[1].hobby[2]);
     </script>
 </body>
 
