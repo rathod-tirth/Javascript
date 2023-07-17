@@ -12,14 +12,10 @@
     <script>
         // const is read-only but we can mutate
         const S = [5, 7, 2];
-        function mut() {
-            "use strict"; // to notify to always declare a variable
+        S[0] = 2;
+        S[1] = 7;
+        S[2] = 5;
 
-            S[0] = 2;
-            S[1] = 7;
-            S[2] = 5;
-        }
-        mut();
         console.log(S);
 
         // prevent mutation
@@ -27,7 +23,7 @@
             const MATH = {
                 PI: 3.14
             };
-            object.freeze(MATH);
+            Object.freeze(MATH);
             try {
                 MATH.PI = 99
             } catch (ex) {
