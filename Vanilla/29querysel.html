@@ -9,23 +9,76 @@
 </head>
 
 <body>
-    <p id="one">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi quas, quos magni animi aliquid placeat
-        rerum iure, dignissimos sed, porro possimus quae recusandae maiores molestias iste! At ducimus vero corrupti.
-    </p>
-    <p class="two"></p>
-    <span></span>
+    <p id="one">Id</p>
+    <p class="two">Class</p>
+    <span>Tag</span>
     <ul>
         <li>Apple</li>
-        <li>Cake</li>
+        <li>Psuedo-Class</li>
         <li>Banana</li>
         <li>Cherry</li>
     </ul>
+    <table>
+        <tr>
+            <td>One</td>
+            <td>Two</td>
+            <td>Specific</td>
+        </tr>
+        <tr>
+            <td>One</td>
+            <td>Two</td>
+            <td>Three</td>
+        </tr>
+        <tr>
+            <td>One</td>
+            <td>Two</td>
+            <td>Three</td>
+        </tr>
+    </table>
+    <button id="btn">All</button>
     <script>
         // querySelector
-        document.querySelector("#one").textContent="Hello! My Name is Tirth Rathod.";
-        document.querySelector(".two").textContent="I am passionate about coding.";
-        document.querySelector("span").textContent=eval("1+1");
-        document.querySelector("li:nth-child(2)").textContent=("Mango");
+
+        // id
+        const one = document.querySelector("#one");
+        one.onclick = () => {
+            one.textContent = "Hello! My Name is Tirth Rathod.";
+        }
+
+        // class
+        const two = document.querySelector(".two");
+        two.onclick = () => {
+            two.textContent = "I am passionate about coding.";
+        }
+
+        // tag
+        const span = document.querySelector("span");
+        span.onclick = () => {
+            span.textContent = eval("1+1");
+        }
+
+        // pseudo-class
+        const li = document.querySelector("li:nth-child(2)");
+        li.onclick = () => {
+            li.textContent = ("Mango");
+        }
+
+        // All
+        const td = document.querySelectorAll("td");
+        const btn = document.querySelector("#btn");
+        btn.onclick = () => {
+            td.forEach(element => {
+                element.style.border = "2px solid black";
+            });
+        }
+
+        // specific form All
+        const td3 = document.querySelectorAll("td")[2];
+        td3.onclick = () => {
+            td3.style.border = "2px solid crimson";
+            td3.textContent="Three";
+        }
     </script>
 </body>
+
 </html>
