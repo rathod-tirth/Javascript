@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constructor</title>
+</head>
+
+<body>
+    <script>
+        // constructor calls itself after the class is invoked
+        class hello {
+            constructor() {
+                console.log("Hello this is called by constructor");
+            }
+        }
+        const obj = new hello();
+
+        // parameter in constructor
+        class sum{
+            constructor(a,b){
+                console.log(a+b);
+            }
+        }
+        const obj2=new sum(5,18);
+
+        // using "this" keyword for scope resolution
+        class math{
+            constructor(a,b){
+                this.a=a;
+                this.b=b;
+            }
+            sub(){
+                console.log(this.a-this.b);
+            }
+            multi(){
+                console.log(this.a*this.b);
+            }
+        }
+        const obj3=new math(18,6);
+        obj3.sub();
+        obj3.multi();
+    </script>
+</body>
+
+</html>

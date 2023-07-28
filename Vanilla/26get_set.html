@@ -40,19 +40,35 @@
                 this.a = a;
                 this.b = b;
             }
-            do(){
+            do() {
 
             }
             get do() {
                 return this.a + this.b;
             }
             set do(val) {
-                this.a=val;
+                this.a = val[0];
+                this.a = val[1];
             }
         }
-        let math = new sum(5, 11);
-        math.do=11;
-        console.log(math.do);
+        const obj2 = new sum(5, 11);
+        obj2.do = [11, 15];
+        console.log(obj2.do);
+
+        class getSet {
+            constructor() {
+                this.a = 5;
+            }
+            // show() {
+            //     console.log("Square: "+this.a * this.a);
+            // }
+            // getter function cannot have parameter
+            get show() {
+                return this.a * this.a;
+            }
+        }
+        const obj = new getSet();
+        obj.show;
     </script>
 </body>
 
