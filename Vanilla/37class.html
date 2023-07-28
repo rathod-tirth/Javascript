@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class</title>
+</head>
+
+<body>
+    <script>
+        // constructor
+        class sum {
+            constructor(a, b) {
+                console.log("Addition");
+                this.a = a;
+                this.b = b;
+                console.log(this.a + this.b);
+            }
+        }
+        let math = new sum(10, 5);
+
+        // class (is a collection of variables and methods, etc.)
+        class abc {
+            // let a=10; (cannot declare vairable outside)
+
+            // method
+            one() {
+                console.log("hello");
+            }
+        }
+
+        // to invoke a class "new" keyword is used
+        new abc().one();
+
+        // object (by assigning a invoke class to a variable an object is created)
+        const obj = new abc();
+
+
+        // method (with/without parameter or return type)
+        class method {
+            // method (o/o)
+            alpha() {
+                console.log("hello");
+            }
+
+            // method (w/o)
+            beta(val) {
+                console.log("hello you passed this value " + val);
+            }
+
+            // method (o/w)
+            gamma() {
+                return "hello this a return value";
+            }
+
+            // method (w/w)
+            delta(val) {
+                return "hello this the return value you passed " + val;
+            }
+        }
+        const obj2 = new method();
+        obj2.alpha();
+        obj2.beta(55);
+        console.log(obj2.gamma());
+        console.log(obj2.delta(9));
+
+        class val {
+            constructor() {
+                this.a = 50;
+            }
+        }
+        const obj3 = new val();
+        // obj3.value();
+        console.log(obj3.a);
+    </script>
+</body>
+
+</html>
