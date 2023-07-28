@@ -1,37 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Get and Set</title>
 </head>
+
 <body>
     <script>
         // Getter and setter
-        class myStat{
+        class myStat {
             constructor(temp) {
-                this._temp=5/9*(temp-32);
+                this._temp = 5 / 9 * (temp - 32);
             }
             get temperature() {
                 return this._temp;
             }
             set temperature(newtemp) {
-                this._temp=newtemp;
+                this._temp = newtemp;
             }
         }
-        const myStats=new myStat(110);
+        const myStats = new myStat(110);
         console.log(myStats.temperature);
         console.log(myStats);
 
-        myStats.temperature=40;
+        myStats.temperature = 40;
         console.log(myStats.temperature);
         console.log(myStats);
 
-        const myStats2=new myStat(120);
+        const myStats2 = new myStat(120);
         console.log(myStats2.temperature);
         console.log(myStats2);
         console.log(myStats);
+
+        class sum {
+            constructor(a, b) {
+                this.a = a;
+                this.b = b;
+            }
+            do(){
+
+            }
+            get do() {
+                return this.a + this.b;
+            }
+            set do(val) {
+                this.a=val;
+            }
+        }
+        let math = new sum(5, 11);
+        math.do=11;
+        console.log(math.do);
     </script>
 </body>
+
 </html>
