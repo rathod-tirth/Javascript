@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polymorphism</title>
+</head>
+<body>
+    <script>
+        // Polymorphism allows you to perform the same operation in multiple ways
+        
+        /* Types of poly:
+            1. overloading: not possible in js
+            2. overridding: declaring the same method again to change its property in different class
+        */
+
+        // overridding
+        class one{
+            default(){
+                console.log("I am default method of class one");
+            }
+        }
+        class two extends one{
+            default(){
+                console.log("I am default method of class two");
+            }
+        }
+        const obj = new two();
+        obj.default();
+    </script>
+</body>
+</html>
