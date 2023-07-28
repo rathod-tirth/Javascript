@@ -7,11 +7,71 @@
 </head>
 <body>
     <script>
-        class one{
-            sum(){
-                
+        // Inheritance (to give access to all the property of a class to the other class)
+        // here "extends" keyword is used to inherit a class
+
+        // 1. single
+        class father{
+            one(){
+                console.log("this is an method of father");
             }
         }
+        class child extends father{
+            two(){
+                console.log("this is an method of child");
+            }
+        }
+        const obj=new child();
+        obj.one();
+        obj.two();
+
+        // 2. multi-level
+        class alpha{
+            one(){
+                console.log("this is one");
+            }
+        }
+        class beta extends alpha{
+            two(){
+                let b=15;
+                console.log("this is two");
+            }
+        }
+        class gamma extends beta{
+            three(){
+                console.log("this is three");
+            }
+        }
+        const obj2=new gamma();
+        obj2.one();
+        obj2.two();
+        obj2.three();
+
+        // 3. hierarchical
+        class person1{
+            one(){
+                console.log("this is person1");
+            }
+        }
+        class person2 extends person1{
+            two(){
+                console.log("this is person2");
+            }
+        }
+        class person3 extends person1{
+            three(){
+                console.log("this is person3");
+            }
+        }
+        const obj3=new person2();
+        const obj4=new person3();
+        obj3.one();
+        obj3.two();
+        obj4.three();
+
+        // 4. multiple not possible since extends cannot be written twice (class child1 extends father1 extends father2)
+
+        // 5. hybrid combination of any two type of inheritance
     </script>
 </body>
 </html>
