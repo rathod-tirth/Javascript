@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Promise</title>
+</head>
+
+<body>
+  <script>
+    // Promise has three pase => Pending, Resolve and Rejected
+    // .then is triggered if the Promise is Resolved
+    // .catch is triggered if the Promise is Rejected
+    // .finally is triggered whether the Promise is Resolved or Rejected
+    
+    let condition = true;
+
+    const myPromise = new Promise((resolve, reject) => {
+      if (condition) {
+        resolve("Promise was fullfilled");
+      } else {
+        reject("Promise was broken");
+      }
+    })// using semi-colon ";" disconnects the below statements
+    // remember myPromise is a function so you can just use myPromise.then and myPromise.catch instead
+
+    .then(result => console.log(result))
+    .catch(error => console.log(error))
+    // using multiple .then and .catch statement makes a Promise chain
+    
+    // but you can only use one .finally
+    .finally(console.log("Promise was made"));
+  </script>
+</body>
+
+</html>
