@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Await</title>
+</head>
+
+<body>
+    <script>
+        const getFruits = async (name) => {
+            let fruits = {
+                pineapple: "🍍",
+                peach: "🍑",
+                strawberry: "🍓"
+            }
+            return fruits[name];
+        }
+        getFruits("peach").then(console.log);
+
+        const makeSmoothie = async () => {
+            const a = getFruits("pineapple");
+            const b = getFruits("strawberry");
+            const smothiee = await Promise.all([a,b]);
+
+            return smothiee
+        }
+
+        makeSmoothie().then(console.log);
+    </script>
+</body>
+
+</html>
