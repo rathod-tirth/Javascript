@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex - Regular Expressions</title>
+</head>
+
+<body>
+    <script>
+        // A regex is a sequence of characters that specifies a match pattern in text
+
+        // create a regex by adding character in-between (/)
+        // .test() returns boolean value based on the existence of regex in the string
+        let str1 = "Hello My name is John";
+        let check1 = /John/.test(str1);
+        console.log(check1);
+
+        // add multiple regex usign or operator (|)
+        let str2="I have a cat";
+        let check2= /dog|cat|fish|crow/.test(str2);
+        console.log(check2);
+
+        // regex is case-sensitive so flags are used to bypass it. "i" is one of them which ignores the case
+        let str3="Bat hit the bAll";
+        let check3=/BALL/i.test(str3);
+        console.log(check3);
+    </script>
+</body>
+
+</html>
