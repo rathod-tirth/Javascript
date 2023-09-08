@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Promise</title>
+   <style>
+      body {
+         text-align: center;
+      }
+   </style>
+</head>
+
+<body>
+   <div>
+      <h2 class="one">Hello World</h2>
+      <h2 class="two">Hello People</h2>
+      <h2 class="three">Hello Javascript</h2>
+      <button>Click</button>
+   </div>
+   <script>
+      const btn = document.querySelector("button");
+
+      btn.addEventListener("click", () => {
+         addColor(".one", 1000, "red")
+            .then(() => addColor(".two", 3000, "blue"))
+            .then(() => addColor(".three", 2000, "green"))
+            .catch((err) => { console.log(err) })
+      })
+
+      function addColor(selector, time, color) {
+         const element = document.querySelector(selector);
+         return new Promise((resolve, reject) => {
+            if (element) {
+               setTimeout(() => {
+                  element.style.color = color;
+                  resolve()
+               }, time)
+            } else {
+               reject(`There is no such element: ${selector}`)
+            }
+         })
+      }
+
+      // function with promise as return value
+      // here resolve has no value but without invoking resolve .then can't be used
+      // here each addcolor have promise as return type so every .then are resolution of prepending addcolor
+      // since there is only one .catch functionality if any of the promise gets rejected same .catch is called
+   </script>
+</body>
+
+</html>

@@ -9,32 +9,37 @@
 
 <body>
   <script>
-    // Promise has three pase => Pending, Resolve and Rejected
-    // .then is triggered if the Promise is Resolved
-    // .catch is triggered if the Promise is Rejected
-    // .finally is triggered whether the Promise is Resolved or Rejected
+    // Promise is a object, to inkove it we set a constructor and pass a callback function with two arguments
+    // those two arguments are also function
 
-    let condition = true;
+    // Promise has three states Pending, Rejected, Fullfilled
+    // once the Promise is either rejected or fullfilled you can't go back to other state (it's a one-way street)
 
-    const myPromise = new Promise((resolve, reject) => {
-      if (condition) {
-        resolve("Promise was fullfilled");
+    // promise is pending by default
+
+    // to access the value in resolve .then is used
+    // to access the value in reject .catch is used
+
+    const value = 2;
+
+    const promise = new Promise((resolve, reject) => {
+      const random = Math.floor(Math.random() * 3);
+      console.log(random);
+
+      if (random === value) {
+        resolve("Correct Number")
       } else {
-        reject("Promise was broken");
+        reject("Wrong Number")
       }
-    })
-      .then(result => console.log(result))
-      .catch(error => console.log(error))
-      // using multiple .then and .catch statement makes a Promise chain
+    });
+    console.log(promise);
 
-      // but you can only use one .finally staement
-      .finally(console.log("Promise was made"));
+    promise.then((data) => console.log(data)).catch((err) => console.log(err))
 
-    // short hand
-    const myPromise2 = () => {
-      return Promise.resolve().then(() => "This Promise is resolved onspot");
-    }
-    myPromise2();
+    // here, we set an example where if the condition is fullfilled the promise is resolved or else rejected
+
+    // promises are widely used for http request only
+    // to get the data if the condition is fullfilled or else reject it
   </script>
 </body>
 
