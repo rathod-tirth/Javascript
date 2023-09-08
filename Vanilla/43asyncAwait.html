@@ -9,25 +9,82 @@
 
 <body>
     <script>
-        const getFruits = async (name) => {
-            let fruits = {
-                pineapple: "🍍",
-                peach: "🍑",
-                strawberry: "🍓"
+        // async always returns a promise
+        // return value of the async is of resolved or rejected value depending on the condition
+        // to use await, async must be present, await wait for the promise to settle
+        // error handling - try/catch block
+
+        const example = async () => {
+            return "hello!!";
+        };
+
+        async function someFunc() {
+            const result = await example();
+            console.log(result);
+        }
+        // here example function has return value and that is the value of resolve
+        // both async are fullfilled in this case
+
+
+        // some data
+        const users = [
+            { id: 1, name: 'john' },
+            { id: 2, name: 'susan' },
+            { id: 3, name: 'anna' },
+        ]
+
+        const articles = [
+            { userId: 1, articles: ['one', 'two', 'three'] },
+            { userId: 2, articles: ['four', 'five'] },
+            { userId: 3, articles: ['six', 'seven', 'eight', 'nine'] },
+        ]
+
+        // async await
+        const getData = async () => {
+            try {
+                const user = await getuser("susan");
+                const article = await getArticle(user.id);
+                console.log(article);
+            } catch (error) {
+                console.log(error);
             }
-            return fruits[name];
+        };
+        getData();
+        // here try and catch block handles all the error
+        // and since every function here have an reject and returns an error
+        // there is no need to check whether or not await variable exists
+
+        // .then
+        getuser("john")
+            .then(user => getArticle(user.id))
+            .then(article => console.log(article))
+            .catch(err => console.log(err))
+        // if user exist then it takes the user id and shows his article or else return the error
+
+        // this functions are going to be alredy coded and given to you, usually
+        function getuser(name) {
+            return new Promise((resolve, reject) => {
+                const user = users.find(user => user.name === name);
+                if (user) {
+                    resolve(user);
+                } else {
+                    reject(`There is no such user with name : ${name}`);
+                }
+            })
         }
-        getFruits("peach").then(console.log);
+        // above function returns that the user exist or not
 
-        const makeSmoothie = async () => {
-            const a = getFruits("pineapple");
-            const b = getFruits("strawberry");
-            const smothiee = await Promise.all([a,b]);
-
-            return smothiee
+        function getArticle(userId) {
+            return new Promise((resolve, reject) => {
+                const userArticle = articles.find(user => user.userId === userId);
+                if (userArticle) {
+                    resolve(userArticle.articles)
+                } else {
+                    reject(`There is no such user with id : ${userId}`);
+                }
+            })
         }
-
-        makeSmoothie().then(console.log);
+        // and if user does exist than is there any articles on that id
     </script>
 </body>
 
