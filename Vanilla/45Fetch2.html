@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Fetch Error</title>
+   <style>
+      body {
+         text-align: center;
+      }
+   </style>
+</head>
+
+<body>
+   <h2>Fetch Error</h2>
+   <button>Fetch</button>
+   <script>
+
+      const url = "https://jsonplaceholder.typicode.com/user";
+
+      // async await
+      const getUser = async () => {
+         try {
+            const res = await fetch(url);
+            if (!res.ok) {
+               const msg = `There was an error "${res.status}"`;
+               throw new Error(msg);
+            }
+            const data = await res.json();
+            console.log(data);
+         } catch (err) {
+            console.log(err);
+         }
+      }
+
+      const btn = document.querySelector("button");
+      btn.addEventListener("click", getUser);
+
+      // fetch still response to 400's and 500's status and resolves the promise
+      // to catch those error set up a condition and throw the error msg manully
+   </script>
+</body>
+
+</html>
