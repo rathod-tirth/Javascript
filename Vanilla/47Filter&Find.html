@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Filter and Find Array Methods</title>
+</head>
+
+<body>
+   <script>
+      // Filter - returns a new array, can manipulate the size of new array (unlike map), returns based on condition
+      // Find - returns single instance, returns first match, if no match - undefined
+
+      const people = [
+         { name: 'bob', age: 20, position: 'developer' },
+         { name: 'peter', age: 25, position: 'designer' },
+         { name: 'susy', age: 30, position: 'the boss' },
+         { name: 'anna', age: 35, position: 'intern' },
+      ];
+
+      // filter
+      const young = people.filter(person => person.age < 30);
+      console.log(young);
+
+      // find
+      const young2 = people.find(person => person.age < 30);
+      console.log(young2);
+
+      // using filter instead of find
+      const peter = people.find(person => person.name === "peter");
+      const anna = people.filter(person => person.name === "anna");
+
+      console.log(peter);
+      console.log(anna);
+
+      // filter returns an array of element even for one element
+      // whereas find only returns that element
+   </script>
+</body>
+
+</html>
