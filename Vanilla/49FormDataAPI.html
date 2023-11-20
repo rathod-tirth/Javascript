@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Form Data API</title>
+</head>
+
+<body>
+   <div>
+      <form id="form">
+         <h4>Form Data API</h4>
+         <!-- name -->
+         <div>
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" />
+         </div>
+         <!-- email -->
+         <div>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" />
+         </div>
+         <!-- password -->
+         <div>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" />
+         </div>
+         <button type="submit" class="btn btn-block">Submit</button>
+      </form>
+   </div>
+   <script>
+      const form = document.querySelector("#form");
+      // is also valid
+      // const formData = new FormData(form);
+
+      form.addEventListener("submit", (e) => {
+         e.preventDefault();
+         const formData = new FormData(e.currentTarget);
+
+         // entries - keys and values pair
+         console.log([...formData.entries()]);
+         console.log([...formData.values()]);
+         console.log([...formData.keys()]);
+
+         console.log(formData.values());
+
+         // iterate over formdata with for of loop
+         for (let [key, value] of formData) {
+            console.log(`${key} = ${value}`);
+         }
+
+         // gets the value
+         console.log(formData.get("email"));
+
+         // adds an entry
+         formData.append("address", "101, Glen Park");
+
+         // deletes an entry
+         formData.delete("email");
+
+         // checks for entry
+         console.log(formData.has("name"));
+
+         console.log([...formData.entries()]);
+
+         // object
+         const formObject = Object.fromEntries(formData);
+         console.log(formObject);
+
+         e.currentTarget.reset();
+      })
+   </script>
+</body>
+
+</html>
